@@ -1,0 +1,130 @@
+{% extends './base.html'  %} {% block content %}
+{% load crispy_forms_tags %}
+    <div class="container text-center">
+        <h4 class="mb-5 text-uppercase mt-5"><i class="fas fa-plus pr-3"></i>New Employee</h4>
+        <h4 class="mt-3 mb-5 text-uppercase">Personal Details</h4>
+
+        <form method="post" class="form-inline" autocomplete="off">
+            {% csrf_token %}
+        
+        <div class="add">
+            <div class="row">
+                <div class="col-md-6 ">
+                    {{form.firstName|as_crispy_field}}
+                </div>
+                <div class="col-md-6">
+                    {{form.lastName|as_crispy_field}}
+                </div>
+    
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    {{form.fatherName|as_crispy_field}}
+                </div>
+                <div class="col-md-6">
+                    {{form.email|as_crispy_field}}
+                </div>
+    
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    {{form.dOB|as_crispy_field}}
+                </div>
+                <div class="col-md-6">
+                    {{form.phoneNumber|as_crispy_field}}
+                </div>
+    
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    {{form.maritialStatus|as_crispy_field}}
+                </div>
+                <div class="col-md-6">
+                    {{form.gender|as_crispy_field}}
+                </div>
+    
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6 ">
+                    <div class="address">
+                        {{form.localAddress|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    {{form.permanentAddress|as_crispy_field}}
+                </div>
+    
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    {{form.employeeId|as_crispy_field}}
+                </div>
+                <div class="col-md-6">
+                    {{form.department|as_crispy_field}}
+                </div>
+    
+            </div>
+
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    {{form.designation|as_crispy_field}}
+                </div>
+                <div class="col-md-6">
+                    {{form.shift|as_crispy_field}}
+                </div>
+    
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    {{form.dOJ|as_crispy_field}}
+                </div>
+                <div class="col-md-6">
+                    {{form.userName|as_crispy_field}}
+                </div>
+    
+            </div>
+
+            
+
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    {{form.password|as_crispy_field}}
+                </div>
+                <div class="col-md-6">
+                    {{form.password|as_crispy_field}}
+                </div>
+    
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    {{form.isAdmin|as_crispy_field}}
+                </div>
+                <div class="col-md-4"></div>
+                
+    
+            </div>
+
+
+            <button type="submit" class="btn btn-success mt-5 mb-5">Add Employee</button>
+
+        </div>
+
+
+    </form>
+
+
+
+    </div>
+    
+   
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+
+label {
+  width: 250px;
+}
+
+h4{
+  margin-top: 10px;
+  margin-bottom: 50px;
+  color: #da0f5e;
+  
+}
+
+textarea{
+  resize: none;
+}
+ 
+
+
+.add{
+  text-align: center;
+}

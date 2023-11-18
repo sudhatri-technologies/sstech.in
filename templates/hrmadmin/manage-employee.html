@@ -1,0 +1,61 @@
+{% extends './base.html' %} {% block content %}
+
+ <div class="container-fluid mt-5">
+    <div class="row">
+
+        <div class="col-md-12">
+            <h4 class="mb-5 text-uppercase text-center mt-2 mb-3">Manage Employee</h4>
+
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered ">
+                    <thead class="text-center">
+                      <tr>
+                        
+                        <th>EmployeeId</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Department</th> 
+                        <th>Designation</th>
+                        <th>Shift</th>
+                        <th>Joining Date</th>
+                        <th>IsAdmin</th>
+                        <th></th>
+                        <th></th>
+
+                        
+                      </tr>
+                    </thead>
+                    <tbody class="text-center">
+                      {% for emp in employees %}
+                      <tr>
+                        
+                        <td>{{emp.employeeId}}</td>
+                        <td>{{emp.firstName}} {{emp.lastName}}</td>
+                        <td>{{emp.email}}</td>
+                        <td>{{emp.phoneNumber}}</td>
+                        <td>{{emp.department}}</td>
+                        <td>{{emp.designation}}</td>
+                        <td>{{emp.shift}}</td>
+                        <td>{{emp.dOJ|date:"d-m-Y"}}</td> 
+                        
+                        <td>{{emp.isAdmin}}</td>
+                        <td ><a href="{% url 'update' emp.id %}"><i  class="fa fa-pen"></i></a></td>
+                        <td ><a href="{% url 'delete' emp.id %}"><i  class="fa fa-trash-alt" ></i></a></td>
+
+                       
+                        
+                        
+
+                      </tr>
+                      {% endfor %}
+                      
+                      
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+ </div>
+
+{% endblock content %}

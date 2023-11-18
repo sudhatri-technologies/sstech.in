@@ -1,0 +1,64 @@
+{% extends './base.html' %} {% block content %}
+{% load crispy_forms_tags %}
+<div class="container text-center mt-5">
+    <h4 class="text-uppercase mb-5">Leave Application Form</h4>
+
+    <form method="post" class="form-inline" autocomplete="off">
+        {% csrf_token %}
+
+        <div class="add">
+            <div class="row">
+                <div class="col-md-6 ">
+                    
+                    {{form.employeeName|as_crispy_field}}
+
+                </div>
+                <div class="col-md-6">
+                    {{form.employeeId|as_crispy_field}}
+
+                </div>
+
+            </div>
+            <div class="row mt-4 mb-5">
+                <div class="col-md-6">
+                    {{form.date|as_crispy_field}}
+
+                </div>
+                <div class="col-md-6">
+                    
+                    
+
+                </div>
+
+            </div>
+
+            <div class="row mt-5">
+                
+                
+                <div class="col-md-12">
+                    
+                    {{form.reasonForLeave|as_crispy_field}}
+
+                </div>
+                
+                
+
+            </div>
+
+            <button type="submit" class="btn btn-success mt-5 mb-5">Submit</button>
+        </div>
+
+    </form>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+{% endblock content %}

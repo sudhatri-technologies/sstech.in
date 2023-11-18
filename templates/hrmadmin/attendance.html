@@ -1,0 +1,102 @@
+{% extends './base.html' %} {% block content %}
+
+ <div class="container-fluid mt-5">
+    <div class="row">
+
+        <div class="col-md-12">
+            <h4 class="mb-5 text-uppercase text-center mt-2 mb-3">Attendance </h4>
+
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered ">
+                    <caption class="text-info font-weight-bold">Present List</caption>
+                    <thead class="text-center">
+                      <tr>
+                        
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Time In</th>
+                        <th>Time Out</th>
+                        <th>Working Hours</th>
+                        <th>Work Description</th>
+                        <th>Status</th>
+                        
+                        
+                      </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        
+                        {% for eI,eO,workingHours in arr2 %}
+                     
+                      <tr>
+                        
+                       <td>{{eI.employeeId}}</td>
+                       <td>{{eI.employeeName}}</td>
+
+                       <td>{{eI.date|date:"d-m-Y"}}</td>
+                       <td>{{eI.employeeTimeIn}}</td>
+                       <td>{{eO.employeeTimeOut}}</td>
+                       <td>{{workingHours}}</td>
+                       <td>{{eO.employeeWorkDescription}}</td>
+                       <td>{{eO.employeeStatus}}</td>
+                      </tr>
+                      {% endfor %}
+                      
+                      
+                      
+                    </tbody>
+                  </table>
+            </div>
+
+
+
+            
+            <div class="table-responsive mt-4">
+                <table class="table table-hover table-bordered ">
+                    <caption class="text-danger font-weight-bold">Absent List</caption>
+                    <thead class="text-center">
+                        
+                      <tr>
+                        
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Reason For Leave</th>
+                        <th>Status</th>
+                       
+                        
+                        
+                      </tr>
+                      
+                    </thead>
+                    <tbody class="text-center">
+                        
+                {% for absent in absentList %}
+                     
+                      <tr>
+                       <td>{{absent.employeeId}}</td>
+                        
+                       <td>{{absent.employeeName}}</td>
+                       <td>{{absent.date|date:"d-m-Y"}}</td>
+                       <td>{{absent.reasonForLeave}}</td>
+                       <td>{{absent.employeeStatus}}</td>
+
+                      </tr>
+                       {% endfor %} 
+                      
+                      
+                      
+                    </tbody>
+                  </table>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+ </div>
+
+{% endblock content %}

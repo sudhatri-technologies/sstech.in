@@ -1,0 +1,42 @@
+.card{
+    box-shadow: 0 0 16px #ccc;
+    margin-top: 20px;
+    cursor: pointer;
+    max-height: 130px;
+}
+.card-body i{
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-left: 10px;
+}
+.card ul li {
+    text-align: center;
+  }
+.card-body ul li {
+    font-size: 20px;
+    position: relative;
+    top: -35px;
+    font-weight: 700;
+    margin-left:40px;
+  }
+
+
+  .card-body .fa-home {
+    color: green;
+  }
+  .card-body .fa-users {
+    color: #da0f5e;
+  }
+  .card-body .fa-user-plus {
+    color: blue;
+  }
+  .card-body .fa-user-minus {
+    color: crimson;
+  }
+
+
+  caption {
+    color:#000;
+    text-align: center;
+    caption-side: top;
+}
