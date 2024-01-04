@@ -1,0 +1,96 @@
+{% extends './base.html' %} {% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        
+        <!-- <div class="col-md-4">
+            <div class="card">
+                <div class="card-body mt-2">
+                    <i class="fas fa-users"></i>
+                    <ul type="none">
+                        <li>Employees</li>
+                        <li>{{totalEmployees}}</li>
+
+                    </ul>
+                </div>
+              </div>
+        </div> -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body mt-2">
+                    <i class="fas fa-user-plus"></i>
+                    <ul type="none">
+                        <li>Present</li>
+                        <li>4</li>
+
+                    </ul>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body mt-2">
+                    <i class="fas fa-user-clock"></i>
+                    <ul type="none">
+                        <li>Late</li>
+                        <li>4</li>
+
+                    </ul>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body mt-2">
+                    <i class="fas fa-user-minus"></i>
+                    <ul type="none">
+                        <li>Absent</li>
+                        <li>4</li>
+
+                    </ul>
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+
+    <div class="row mt-5">
+        <div class="table-responsive">
+            <table class="table table-bordered text-center">
+                <caption>Departments</caption>
+                <thead>
+                    <tr>
+                        
+                        <th>Department Name</th>
+                        <th>No of Employees</th>
+                        
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- {% for deptName,empCount in arr1 %}
+                    
+                    <tr>
+                        <td>{{deptName}}</td>
+                        <td>{{empCount}}</td>
+                    </tr>
+                    {% endfor %}
+                 -->
+                     
+                    
+                    
+
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock content %}

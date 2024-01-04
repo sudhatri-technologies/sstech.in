@@ -13,9 +13,21 @@ h4{
 textarea{
   resize: none;
 }
- 
-
 
 .add{
   text-align: center;
+}
+
+.form-inline .form-control {
+  display: inline-block;
+  width: 290px;
+  vertical-align: middle;
+}
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 10px !important;
+  color: #dc3545;
 }

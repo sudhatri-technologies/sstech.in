@@ -36,6 +36,9 @@
                     {{form.password|as_crispy_field}}   
                         <button type="submit" class="btn btn-success mt-2 mb-1">Sign in</button>
                       </form>
+                      <br>
+                      <p><a href="password_reset" target="_blank">Forgot Password</a></p>
+                      
                       <p class="mt-3"><b>Note : </b>Please enter the valid username and password </p>
                       {% for message in messages %}
                       <p class="text-danger">{{ message }}</p>

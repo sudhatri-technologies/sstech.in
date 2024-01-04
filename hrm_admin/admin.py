@@ -6,7 +6,7 @@ from hrm_admin.models import *
 #admin.site.register(Department)
 
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display=['id','firstName','lastName','department']
+    list_display=['employeeId','firstName','lastName','department']
 
 admin.site.register(Employee,EmployeeAdmin)
 

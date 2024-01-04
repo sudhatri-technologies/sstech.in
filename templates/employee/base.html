@@ -27,7 +27,7 @@
    
 
       <nav class="navbar navbar-expand-lg ">
-        <!-- <a class="navbar-brand" href="#">Sri Sudhatri Technologies PVT LTD</a> -->
+        <a class="navbar-brand font" href="#">Sri Sudhatri Technologies PVT LTD</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
@@ -35,13 +35,25 @@
       
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item mr-2">
+                <a class="nav-link" href="{%  url 'empdashboard' %}"><i class="fas fa-bars mr-2"></i>Dashboard</a>
+                
+              </li>
                 <li class="nav-item mr-2">
-                  <a class="nav-link" href="{%  url 'checkin' %}"><i class="fas fa-bars mr-2"></i>CheckIn</a>
+                  <a class="nav-link" href="{%  url 'checkin' %}"><i class="fas fa-clock mr-2"></i>CheckIn</a>
                   
                 </li>
                 <li class="nav-item mr-2">
-                  <a class="nav-link" href="{%  url 'checkout' %}"><i class="fas fa-user mr-2"></i>Check Out</a>
+                  <a class="nav-link" href="{%  url 'checkout' %}"><i class="fas fa-clock mr-2"></i>Check Out</a>
                 </li>
+
+                <li class="nav-item mr-2">
+                  <a class="nav-link" href="{% url 'attendencehistory' %}"><i class="fas fa-hourglass-start mr-2"></i>Attendence History</a>
+                </li>
+                <li class="nav-item mr-2">
+                  <a class="nav-link" href="{% url 'leavereport' %}"><i class="fas fa-user mr-2"></i>Leave Report</a>
+                </li>
+                
                 <li class="nav-item mr-2">
                   <a class="nav-link" href="{%  url 'applyleave' %}"><i class="fas fa-user mr-2"></i>Apply Leave</a>
                 </li>

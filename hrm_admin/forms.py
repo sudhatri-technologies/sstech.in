@@ -10,6 +10,8 @@ class EmployeeForm(forms.ModelForm):
             'password':forms.PasswordInput(),
             'dOB':forms.TextInput(attrs={'placeholder': 'yyyy-mm-dd'}),
             'dOJ':forms.TextInput(attrs={'placeholder': 'yyyy-mm-dd'}),
+            'userName':forms.TextInput(attrs={'placeholder':'EmployeeID & Username be Same'}),
+
             
                  }
     def __init__(self,*args,**kwargs):            #add this

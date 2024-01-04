@@ -40,24 +40,26 @@ def dashboard(request):
 #             form=EmployeeForm(instance=employee)
 #     return render(request,'hrmadmin/add-employee.html',{'form':form})
 
-def addUpdateEmployee(request,id=0):
+def addUpdateEmployee(request,id=''):
     if(request.method=="GET"):
-        if(id==0):             #insert operation
+        if(id==''):             #insert operation
             form=EmployeeForm()
         else:                  #update operation
-            employee=Employee.objects.get(pk=id)  #filtering based on primarykey
+            employee=Employee.objects.get(employeeId=id)  #filtering based on primarykey
             form=EmployeeForm(instance=employee)
         return render(request,'hrmadmin/add-employee.html',{'form':form})
         
     else:          #POST request
-        if(id==0):    #insert operation
+        if(id==''):    #insert operation
             form=EmployeeForm(request.POST)
         else:
-            employee=Employee.objects.get(pk=id)  #filtering based on primarykey
+            employee=Employee.objects.get(employeeId=id)  #filtering based on primarykey
             form=EmployeeForm(request.POST,instance=employee)
         if(form.is_valid()):
             form.save()
-        return redirect('dashboard')
+            return redirect('dashboard')
+        return render(request,'hrmadmin/add-employee.html',{'form':form})
+    
 
 
 
@@ -69,16 +71,18 @@ def manageEmployee(request):
         context={'employees':employees}
         
         return render(request,'hrmadmin/manage-employee.html',context)
+    
+
 import datetime
 def attendance(request):
     if request.method =='POST':
         pass
     else:
-        EmpTimeIns=EmployeeTimeIn.objects.all()
-        EmpTimeOuts=EmployeeTimeOut.objects.all()
-        EmpAbsentList=EmpLeaveApplication.objects.all()
-        inTime=EmployeeTimeIn.objects.values_list('employeeTimeIn',flat=True)
-        outTime=EmployeeTimeOut.objects.values_list('employeeTimeOut',flat=True)
+        EmpTimeIns=EmployeeTimeIn.objects.all().order_by('-date')
+        EmpTimeOuts=EmployeeTimeOut.objects.all().order_by('-date')
+        EmpAbsentList=EmpLeaveApplication.objects.all().order_by('-date')
+        inTime=EmployeeTimeIn.objects.order_by('-date').values_list('employeeTimeIn',flat=True)
+        outTime=EmployeeTimeOut.objects.order_by('-date').values_list('employeeTimeOut',flat=True)
         workingHours=[]
         for (i,o) in zip(inTime,outTime):
             diff=datetime.timedelta(hours=(o.hour-i.hour),minutes=(o.minute-i.minute),seconds=(o.second-i.second))
@@ -96,7 +100,7 @@ def attendance(request):
 
 
 def deleteEmployee(request,id):
-    employee=Employee.objects.get(pk=id)
+    employee=Employee.objects.get(employeeId=id)
     employee.delete()
     return redirect('manage')
 
